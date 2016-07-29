@@ -1,0 +1,22 @@
+{
+  "name": "generator-dccrud",
+  "version": "0.0.1",
+  "description": "Geração do CRUD",
+  "main": "generators/app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "generators/app",
+    "generators/router"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.24.1",
+    "chalk": "^0.5.x",
+    "superb": "^1.x.x",
+    "validator": "^3.x.x",
+    "yosay": "^1.x.x"
+  }
+}
