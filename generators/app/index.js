@@ -15,9 +15,39 @@ var DCGenerator = yeoman.Base.extend({
         this.log(yosay('DCCrud Generator Tabajara!'));
     },
 
+    initializing: {
+        teste: function() {
+            console.log('passou');
+        }
+    },
+
     prompting: {
-        askForProject : prompts.askForProject
+        askForProject: prompts.askForProject
+    },
+
+    configuring: {
+
+        generateEntities: function() {
+
+            this.composeWith('dccrud:entity', {
+                options: {
+
+                },
+                args: ['Teste']
+            }, {
+                local: require.resolve('../entity')
+            });
+
+        }
+
+    },
+    end: {
+        eita: function() {
+            console.log('fimmmmmmmmmmm');
+        }
     }
+
+
 
 });
 

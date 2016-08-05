@@ -12,12 +12,12 @@ function askForProject() {
 
     var projectName = this.appname.toString().split(' ')[0];
 
-    this.prompt({
+    return this.prompt([{
         type: 'input',
         name: 'project',
         message: 'Qual é o nome do projeto?',
         default: projectName
-    }, function(answers) {
+    }]).then(function(answers) {
         this.config.project = answers;
     }.bind(this));
 

@@ -1,6 +1,6 @@
 'use strict';
 
-var //path    = require('path'),
+var path = require('path'),
     yeoman = require('yeoman-generator'),
     prompts = require('./prompts_'),
     chalk = require('chalk');
@@ -11,8 +11,6 @@ module.exports = EntityGenerator.extend({
     constructor: function() {
 
         yeoman.Base.apply(this, arguments);
-
-
 
         this.argument('name', {
             type: String,
@@ -32,7 +30,6 @@ module.exports = EntityGenerator.extend({
     },
 
     initializing: function() {
-
         /*this.props = this.config.getAll();
         this.props.package = parts.join('.');
         this.props.dir = parts.join('/');
@@ -44,15 +41,13 @@ module.exports = EntityGenerator.extend({
     },
 
     writing: function() {
-        /*var namespace = (this.props.namespace || '').replace(/\./g, '/');
-
-    this.template('_Entity.java', path.join('src/main/java', namespace, this.props.dir, this.props.name + '.java'));
-*/
-    },
-    writeServerFiles: function() {
+        /*var namespace = (this.props.namespace || '').replace(/\./g, '/');*/
+        console.log('escrevendo');
         this.entityClass = this.name;
         this.template('_Entity.java', 'src/main/java/com/datacoper/cooperate/agricola/common/entities/' + this.name + '.java');
+
     },
+
 
     prompting: {
         /* pre entity hook needs to be written here */

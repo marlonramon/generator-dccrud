@@ -18,15 +18,16 @@ function askForField() {
             message: 'Adiciona um campo, baitola',
             default: true
         }, {
-            when: function(response) {                
-                return response.fieldAdd === true;
-
+            when: function(response) {
+                response.fieldAdd === true;
             }
         }
 
     ];
 
-    this.prompt(prompts);
+    return this.prompt(prompts, function() {
+        console.log('pronto');
+    }.bind(this));
 
 
 }
