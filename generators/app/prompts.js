@@ -15,10 +15,10 @@ function askForProject() {
     return this.prompt([{
         type: 'input',
         name: 'project',
-        message: 'Qual é o nome do projeto?',
+        message: 'Qual é o nome do Módulo?',
         default: projectName
-    }]).then(function(answers) {
-        this.config.project = answers;
+    }]).then(function(answers) {        
+        this.config.set('project', answers.project);
     }.bind(this));
 
 }

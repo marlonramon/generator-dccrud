@@ -3,9 +3,13 @@
 var path = require('path'),
     yeoman = require('yeoman-generator'),
     prompts = require('./prompts_'),
-    chalk = require('chalk');
+    _ = require('lodash'),
+    chalk = require('chalk'),
+    constants = require('../generator-constants');
 
 var EntityGenerator = yeoman.Base.extend({});
+
+
 
 module.exports = EntityGenerator.extend({
     constructor: function() {
@@ -42,9 +46,13 @@ module.exports = EntityGenerator.extend({
 
     writing: function() {
         /*var namespace = (this.props.namespace || '').replace(/\./g, '/');*/
-        console.log('escrevendo');
-        this.entityClass = this.name;
-        this.template('_Entity.java', 'src/main/java/com/datacoper/cooperate/agricola/common/entities/' + this.name + '.java');
+        var project = this.config.get('project');
+
+        this.entityName = this.name;
+
+        var packageName = constants.COMMON + constants.MAIN_DIR + constants.BASE_PACKAGE + _.lowercase(project) + constants.ENTITY_PACKAGE;
+
+        this.template('_Entity.java', packageName + this.entityName + '.java');
 
     },
 

@@ -1,8 +1,8 @@
 
-package com.datacoper.cooperate.agricola.common.entities;
+package <%= entityPackage %>;
 
 @Entity
-public class <%= entityClass %> implements Serializable {
+public class <%= entityName %> implements Serializable {
 
 
 }

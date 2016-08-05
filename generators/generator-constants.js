@@ -19,6 +19,12 @@ const DOCKER_JHIPSTER_LOGSTASH = 'jhipster/jhipster-logstash:v1.3.0';
 const MAIN_DIR = 'src/main/';
 const TEST_DIR = 'src/test/';
 
+//DATACOPER
+const COMMON = 'Common';
+const SERVER = 'EM';
+const BASE_PACKAGE = 'java/com/datacoper/cooperate/';
+const ENTITY_PACKAGE = '/common/entities/';
+
 // Note: this will be prepended with 'target/' for Maven, or with 'build/' for Gradle.
 const CLIENT_DIST_DIR = 'www/';
 
