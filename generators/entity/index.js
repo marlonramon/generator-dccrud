@@ -28,7 +28,7 @@ module.exports = EntityGenerator.extend({
             defaults: 'public'
         });
 
-        //console.log('Criando a entidade: ' + this.name);
+        console.log('Criando a entidade: ' + this.name);
 
 
     },
@@ -50,7 +50,11 @@ module.exports = EntityGenerator.extend({
 
         this.entityName = this.name;
 
-        var packageName = constants.COMMON + constants.MAIN_DIR + constants.BASE_PACKAGE + _.lowercase(project) + constants.ENTITY_PACKAGE;
+        console.log('akii: ' + constants.COMMON);
+
+        var packageName = constants.BASE_PACKAGE + _.lowerCase(project) + constants.ENTITY_PACKAGE;
+
+        this.entityPackage = packageName;
 
         this.template('_Entity.java', packageName + this.entityName + '.java');
 
